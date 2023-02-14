@@ -1,32 +1,23 @@
-import React, {createContext} from 'react'
+import React, { createContext } from "react";
 import ComponentA from "./ComponentA";
 
 const FirstName = createContext({
-    name: "John",
-    lastName: "Doe",
-    email: "john@example.com",
-    }
-
-);
+  name: "John",
+  lastName: "Doe",
+  email: "john@example.com",
+});
 
 const App = () => {
+  return (
+    <>
+      {/*<ComponentA hallo="hallo2"/>*/}
 
-    const SecondName = {
-        name: "John",
-        lastName: "Doe",
-        email: "john@example.com",
-    }
-    return (
-        <>
-            {/*<ComponentA hallo="hallo2"/>*/}
-
-
-            <FirstName.Provider value={}>
-                <ComponentA/>
-            </FirstName.Provider>
-        </>
-    )
-}
+      <FirstName.Provider value={FirstName}>
+        <ComponentA />
+      </FirstName.Provider>
+    </>
+  );
+};
 
 export default App;
-export {FirstName};
+export { FirstName };
