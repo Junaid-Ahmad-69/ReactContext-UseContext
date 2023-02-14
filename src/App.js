@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {createContext} from 'react'
+import ComponentA from "./ComponentA";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const FirstName = createContext({
+    name: "John",
+    lastName: "Doe",
+    email: "john@example.com",
+    }
+
+);
+
+const App = () => {
+
+    const SecondName = {
+        name: "John",
+        lastName: "Doe",
+        email: "john@example.com",
+    }
+    return (
+        <>
+            {/*<ComponentA hallo="hallo2"/>*/}
+
+
+            <FirstName.Provider value={}>
+                <ComponentA/>
+            </FirstName.Provider>
+        </>
+    )
 }
 
 export default App;
+export {FirstName};
